@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { RouterTestingModule } from "@angular/router/testing";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { SignupComponent } from "./signup.component";
 
@@ -10,12 +9,8 @@ describe("SignupComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        FormsModule,
-        ReactiveFormsModule
-      ],
-      declarations: [ SignupComponent ]
+      imports: [ReactiveFormsModule],
+      declarations: [SignupComponent]
     })
     .compileComponents();
   }));
