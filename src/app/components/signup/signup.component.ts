@@ -20,7 +20,12 @@ export class SignupComponent implements OnInit {
       ]),
       password: new FormControl("", Validators.required),
       confirmation: new FormControl("", Validators.required)
-    });
+    }, this.passwordMatchValidator);
+  }
+
+  passwordMatchValidator(fg: FormGroup): { [s: string]: boolean } {
+    return fg.get("password").value === fg.get("confirmation").value ?
+      null : { "mismatch": true };
   }
 
   onSubmit(): void {
